@@ -1,0 +1,2 @@
+/user/2/lijia/Documents/M1/HPC/Practical2/CMakeFiles/matrix_product.dir
+/user/2/lijia/Documents/M1/HPC/Practical2/CMakeFiles/max_subarray.dir

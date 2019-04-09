@@ -1,0 +1,1 @@
+/opt/rh/devtoolset-8/root/usr/bin/c++    -fopenmp     CMakeFiles/max_subarray.dir/max_subarray.cxx.o  -o max_subarray -rdynamic 

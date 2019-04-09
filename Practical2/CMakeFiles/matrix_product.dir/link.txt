@@ -1,0 +1,1 @@
+/opt/rh/devtoolset-8/root/usr/bin/c++    -fopenmp     CMakeFiles/matrix_product.dir/matrix_product.cxx.o  -o matrix_product -rdynamic 
