@@ -1,0 +1,1 @@
+/opt/rh/devtoolset-8/root/usr/bin/c++    -std=c++11    CMakeFiles/cord.dir/string_equation.cxx.o  -o cord -rdynamic 

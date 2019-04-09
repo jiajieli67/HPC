@@ -5,6 +5,7 @@
 #include <cmath>
 #include <ctime>
 #include <cstdlib>
+#include <chrono>
 
 
 int main ( );
@@ -14,10 +15,8 @@ void timestamp ( );
 
 int main (){
   // Number of dsicretisation point in space
-# define m 100
-
-  // Number of time step
-# define n 100
+int m = 1000;
+int n = 1000;
 
   // Define array holding the amplitude of the string
   double u[m+1][n+1];
@@ -63,8 +62,12 @@ int main (){
   u[1][n] = 0.0;
 
   // Loop in time
+	auto start = std::chrono::high_resolution_clock::now();
+	#pragma omp parallel
+	{
   for ( int i = 2; i <= m; i++ ) {
     u[i][0] = 0.0;
+		#pragma omp for shared(i)
     for ( int j = 1; j < n; j++ ) {
       u[i][j] =
         alpha   * (u[i-1][j-1] + u[i-1][j+1])
@@ -73,8 +76,12 @@ int main (){
     }
     u[i][n] = 0.0;
   }
-
+}
+auto stop = std::chrono::high_resolution_clock::now();
+auto elapsed =  std::chrono::duration<double>(stop-start).count();
+std::cout << elapsed << " seconds."<<std::endl;
   //  Write data file.
+	/*
   outfile.open ( "string_data.dat" );
 
   t = 0.; x = 0.;
@@ -92,6 +99,7 @@ int main (){
   return 0;
 # undef m
 # undef n
+*/
 }
 
 // Initial condition

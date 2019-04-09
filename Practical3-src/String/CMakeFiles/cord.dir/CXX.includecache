@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/user/2/lijia/Documents/M1/HPC/Practical3-src/String/string_equation.cxx
+iostream
+-
+fstream
+-
+iomanip
+-
+cmath
+-
+ctime
+-
+cstdlib
+-
+chrono
+-
+
